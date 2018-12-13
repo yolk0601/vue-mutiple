@@ -15,7 +15,7 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/modules/'+templatedir+'/src/main.js'
+    app: './src/modules/'+ templatedir+ '/src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -28,7 +28,10 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      // '@': resolve('src'),
+      '@': path.join(__dirname, '../modules', templatedir, 'src'),
+      '~common': path.join(__dirname, '../modules/components/common')
+      // 'common': path.join(__dirname, '../common')
     }
   },
   module: {

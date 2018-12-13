@@ -4,8 +4,9 @@
 
 const path = require('path')
 const templatedir = process.env.npm_config_dir
-// console.log('打印内容', process.env)
-console.log('打印内容2', process.argv)
+console.log('模块：', templatedir)
+// 代理
+// const proxyTable = require('../proxy.json')
 
 module.exports = {
   dev: {
@@ -17,8 +18,9 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
+    ndex: templatedir,
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
@@ -27,6 +29,9 @@ module.exports = {
     /**
      * Source Maps
      */
+     // eslint 代码规范
+     useEslint: false,
+     showEslintErrorsInOverlay: false,
 
     // https://webpack.js.org/configuration/devtool/#development
     devtool: 'cheap-module-eval-source-map',
@@ -41,10 +46,10 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../dist/'+ templatedir + '/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../dist/'+ templatedir),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
 
