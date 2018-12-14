@@ -19,3 +19,8 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+#### 注意
+1. 可以删除 vue init 的 router App.vue main.js等；
+2. 只可以各模块运行 

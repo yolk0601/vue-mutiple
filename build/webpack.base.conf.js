@@ -28,10 +28,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      // '@': resolve('src'),
-      '@': path.join(__dirname, '../modules', templatedir, 'src'),
-      '~common': path.join(__dirname, '../modules/components/common')
-      // 'common': path.join(__dirname, '../common')
+      '@': path.join(__dirname, '../src/modules', templatedir, 'src'),
+      '~common': path.join(__dirname, '../src/components/common')
     }
   },
   module: {
